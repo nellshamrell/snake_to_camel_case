@@ -14,4 +14,8 @@ describe CaseConverter do
     @case_converter.snake_to_camel("_method").should == "_Method"
   end
 
+  it "capitalizes any character that follows an underscore" do
+    @case_converter.snake_to_camel("some_method_name").should == "Some_Method_Name"
+  end
+
 end
