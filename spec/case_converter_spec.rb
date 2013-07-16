@@ -18,8 +18,12 @@ describe CaseConverter do
     @case_converter.upcase_characters("some_method_name").should == "Some_Method_Name"
   end
 
-  it "removes any underscores" do
+  it "removes underscores throughout the string" do
     @case_converter.remove_underscores("Some_Method_Name").should == "SomeMethodName"
+  end
+
+  it "converts snake_case to CamelCase" do
+    @case_converter.snake_to_camel("some_method_name").should == "SomeMethodName"
   end
 
 end
