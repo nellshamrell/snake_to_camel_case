@@ -1,4 +1,10 @@
 class CaseConverter
+  def snake_to_camel(string)
+    remove_underscores(upcase_characters(string))
+  end
+
+  private
+
   def upcase_characters(string)
     string.gsub(/(^[^a-z]?[a-z])|(_[a-z])/) {|char| char.upcase}
   end
@@ -7,7 +13,4 @@ class CaseConverter
     string.gsub(/_/, '')
   end
 
-  def snake_to_camel(string)
-    remove_underscores(upcase_characters(string))
-  end
 end
