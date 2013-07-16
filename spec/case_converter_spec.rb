@@ -10,4 +10,8 @@ describe CaseConverter do
     @case_converter.snake_to_camel("method").should == "Method"
   end
 
+  it "capitalizes the first letter of a string" do
+    @case_converter.snake_to_camel("_method").should == "_Method"
+  end
+
 end
