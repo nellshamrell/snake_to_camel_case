@@ -7,15 +7,19 @@ describe CaseConverter do
   end
 
   it "capitalizes the first character of a string" do
-    @case_converter.snake_to_camel("method").should == "Method"
+    @case_converter.upcase_characters("method").should == "Method"
   end
 
   it "capitalizes the first letter of a string" do
-    @case_converter.snake_to_camel("_method").should == "_Method"
+    @case_converter.upcase_characters("_method").should == "_Method"
   end
 
   it "capitalizes any character that follows an underscore" do
-    @case_converter.snake_to_camel("some_method_name").should == "Some_Method_Name"
+    @case_converter.upcase_characters("some_method_name").should == "Some_Method_Name"
+  end
+
+  it "removes any underscores" do
+    @case_converter.remove_underscores("Some_Method_Name").should == "SomeMethodName"
   end
 
 end
