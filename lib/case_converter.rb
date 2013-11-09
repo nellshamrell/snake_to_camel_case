@@ -1,6 +1,7 @@
 class CaseConverter
   def upcase_characters(string)
-  string.gsub(/(\A_?[a-z]|(?<=_)[a-z])/) {|char| char.upcase}
+    string.gsub(/(\A\w|(?<=_)\w)/) {|char| char.upcase}
+    # also: (^\D|(?<=_)\D)
   end
 
   def remove_underscores(string)
